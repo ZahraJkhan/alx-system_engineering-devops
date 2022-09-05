@@ -1,1 +1,2 @@
-echo Hello, Woeld
+#!/bin/bash
+echo Hello,World
