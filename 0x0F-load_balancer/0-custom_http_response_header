@@ -6,6 +6,14 @@
 sudo apt-get update
 sudo apt-get -y install nginx
 
+# configure firewall to allow request through port 80
+sudo ufw allow 'Nginx HTTP'
+
+sudo mkdir -p /var/www/html
+
+# change permissions to allow us to easily create files in this directory
+sudo chmod -R 755 /var/www
+
 #  create the index page
 echo 'Hello World!' |sudo tee  /var/www/html/index.html
 
