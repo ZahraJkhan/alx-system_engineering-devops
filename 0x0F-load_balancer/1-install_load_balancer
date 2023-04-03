@@ -12,8 +12,8 @@ frontend software-hub.tech
         default_backend web_servers
 backend web_servers
         balance roundrobin
-        server 64820-web-01 100.25.36:180
-        server 64820-web-02 54.236.33.24
+        server 98142-web-01 100.25.36:180
+        server 98142-web-02 54.236.33.24
 ' >> /etc/haproxy/haproxy.cfg
 
 # Restart HAproxy service
