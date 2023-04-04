@@ -7,15 +7,21 @@ sudo apt-get -y install haproxy
 sudo chown -R "$USER:$USER" /etc/haproxy/
 
 # Configure haproxy configuration file to distribute requests using a roundrobin algorithm
-echo "
-frontend zahra-frontend
-        bind 0:80
+server_config=\
+"
+frontend  zahra-frontend
+        bind *:80
+        mode http
         default_backend zahra-backend
 backend zahra-backend
         balance roundrobin
-        server 98142-web-01 100.25.36:180:80 check
+        server 98142-web-01 100.25.36.180:80 check
         server 98142-web-02 54.236.33.24:80 check
-" >> /etc/haproxy/haproxy.cfg
+"
+echo "$server_config" | sudo tee -a /etc/haproxy/haproxy.cfg
+
+# enable haproxy to be started by init script
+echo "ENABLED=1" | sudo tee -a /etc/default/haproxy
 
 # Restart HAproxy service
 sudo service haproxy restart
