@@ -3,7 +3,8 @@
 
 # Install HAproxy on a server
 sudo apt-get -y update
-sudo apt-get -y install haproxy=1.6.\*
+sudo apt-get -y install haproxy
+sudo chown -R "$USER:$USER" /etc/haproxy/
 
 # Configure haproxy configuration file to distribute requests using a roundrobin algorithm
 echo "
