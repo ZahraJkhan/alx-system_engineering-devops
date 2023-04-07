@@ -37,14 +37,15 @@ defaults
         errorfile 504 /etc/haproxy/errors/504.http
 
 
-frontend sammykingx.tech
-        bind 0:80
-        bind 0:443 ssl crt /etc/ssl/private/software-hub.tech.pem
+frontend  software-hub-frontend-http
+        bind *:80
+        mode http
+        bind *:443 ssl crt /etc/haproxy/certs/www.software-hub.tech.pem
         http-request redirect scheme https code 301 unless { ssl_fc }
-        option forwardfor
-        default_backend software-hub-backend
+        default_backend software-hub
 
-backend sammykingx.tech_backend
+backend software-hub
         balance roundrobin
         server 98142-web-01 100.25.36.180:80 check
-    	server 98142-web-02 54.236.33.24:80 check
+        server 98142-web-02 54.236.33.24:80 check
+
