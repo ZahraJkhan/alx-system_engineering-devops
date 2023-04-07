@@ -33,18 +33,16 @@ defaults
         errorfile 503 /etc/haproxy/errors/503.http
         errorfile 504 /etc/haproxy/errors/504.http
 
-frontend  software-hub-frontend
+frontend  software-hub-frontend-http
         bind *:80
         mode http
-        default_backend zahra-backend
-
-frontend software-hub-frontend
         bind *:443 ssl crt /etc/haproxy/certs/www.software-hub.tech.pem
-        http-request redirect scheme https code 301 unless { ssl_fc }
-        option forwardfor
-        default_backend zahra-backend
+        redirect scheme https if !{ ssl_fc }
+        stats uri /haproxy?stats
+        default_backend web-servers
 
-backend zahra-backend
+backend web-servers
         balance roundrobin
         server 98142-web-01 100.25.36.180:80 check
         server 98142-web-02 54.236.33.24:80 check
+
