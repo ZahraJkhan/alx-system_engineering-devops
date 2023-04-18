@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+
+# Get today's date in the required format
+TODAY=$(date +"%d-%m-%Y")
+
+# Define the file name for the backup
+BACKUP_FILE="backup.sql"
+
+# Get the password argument passed to the script
+PASSWORD="$1"
+
+# Dump all MySQL databases
+mysqldump -u root -p$PASSWORD --all-databases > $BACKUP_FILE
+
+# Compress the backup file into a tar.gz archive
+tar -czvf $TODAY.tar.gz $BACKUP_FILE
+
+# Delete the uncompressed backup file
+rm $BACKUP_FILE
