@@ -1,4 +1,3 @@
-#!/usr/bin/env bash
 #conf file for replica
 
 # Copyright (c) 2014, 2023, Oracle and/or its affiliates.
@@ -34,6 +33,7 @@ pid-file        = /var/run/mysqld/mysqld.pid
 socket          = /var/run/mysqld/mysqld.sock
 datadir         = /var/lib/mysql
 log-error       = /var/log/mysql/error.log
+# 
 server-id       = 2
 relay_log       = mysql-relay-bin
 log_bin         = mysql-bin

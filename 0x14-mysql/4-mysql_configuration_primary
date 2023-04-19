@@ -1,4 +1,3 @@
-#!/usr/bin/env bash
 # configuration file for primary sever 
 # Copyright (c) 2014, 2023, Oracle and/or its affiliates.
 #
@@ -33,6 +32,7 @@ pid-file        = /var/run/mysqld/mysqld.pid
 socket          = /var/run/mysqld/mysqld.sock
 datadir         = /var/lib/mysql
 log-error       = /var/log/mysql/error.log
+# my configurations for replication
 server-id       = 1
 log_bin         = mysql-bin
 binlog_do_db    = tyrell_corp
