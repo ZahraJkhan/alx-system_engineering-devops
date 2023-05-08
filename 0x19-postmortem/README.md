@@ -3,11 +3,13 @@
 <h2>Issue Summary:</h2>
 
 <p><strong>Duration:</strong> May 5, 2023, from 10:00 AM to 2:00 PM EAT</p>
-<b>Impact:</b> Users experienced slow loading times and intermittent errors when accessing our web application. Approximately 50% of users were affected.
+<b>Impact:</b> Users experienced slow loading times and intermittent errors when accessing our web application. Approximately 50% of users were affected.</br>
 <b>Root Cause:</b> A database connection issue caused the application to slow down and produce errors.
 
 <h2>Timeline:</h2>
 
+| Time           | Actions |
+| -------------- | -------- |
 | 10:00 AM: | The issue was first detected when a monitoring alert was triggered for slow response times. |
 | 10:05 AM: | Engineers investigated the alert and noticed intermittent errors in the application logs. |
 | 10:15 AM: | Initial assumption was that the application code was causing the slow response times and errors. |
@@ -15,9 +17,9 @@
 | 11:00 AM: | Investigation focused on the infrastructure, specifically the load balancer and web server. |
 | 11:30 AM: | Misleading investigation path taken: Engineers suspected a configuration issue with the load balancer but it turned out to be a red herring. |
 | 12:00 PM: | The incident was escalated to the database team for further investigation. |
-| 1:00 PM: | Root cause identified as a database connection issue. |
-| 1:30 PM: | The database team implemented a fix and the application started to function normally. |
-| 2:00 PM: | The incident was resolved and users were able to access the application without issues. |
+| 1:00 PM:  | Root cause identified as a database connection issue. |
+| 1:30 PM:  | The database team implemented a fix and the application started to function normally. |
+| 2:00 PM:  | The incident was resolved and users were able to access the application without issues. |
 
 <h2>Root Cause and Resolution:</h2>
 
