@@ -1,5 +1,6 @@
 <h1>Postmortem</h1>
 
+![](https://s3.amazonaws.com/lowres.cartoonstock.com/death-post_mortem-post_mortems-autopsy-mortuary-pathologist-aevn1067_low.jpg)</br>
 <h2>Issue Summary:</h2>
 
 <p><strong>Duration:</strong> May 5, 2023, from 10:00 AM to 2:00 PM EAT</p>
@@ -21,10 +22,13 @@
 | 1:30 PM:  | The database team implemented a fix and the application started to function normally. |
 | 2:00 PM:  | The incident was resolved and users were able to access the application without issues. |
 
+![](http://3.bp.blogspot.com/-HQMCOBTPN5c/T2o4gjgVLaI/AAAAAAAAIIU/3obuv2PQpnk/s1600/root+cause.jpg)</br>
+
 <h2>Root Cause and Resolution:</h2>
 
 <p>The root cause of the issue was a database connection issue. The connection pool had reached its maximum capacity, causing the application to slow down and produce errors. The database team implemented a fix by increasing the connection pool size and optimizing the database queries, which resolved the issue.</p>
 
+![](https://media.makeameme.org/created/brace-yourself-corrective-a353225667.jpg)</br>
 <h2>Corrective and Preventative Measures:</h2>
 
 <p>To prevent similar issues from occurring in the future, the following corrective and preventative measures will be implemented:</p>
